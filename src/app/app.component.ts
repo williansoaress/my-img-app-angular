@@ -6,7 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my img app';
-  description = 'teste';
-  url = 'https://dropsdejogos.uai.com.br/wp-content/uploads/sites/10/2020/07/starfox-950x664.jpg';
+
+    photos = [
+      {
+        url: 'https://dropsdejogos.uai.com.br/wp-content/uploads/sites/10/2020/07/starfox-950x664.jpg', 
+        description: 'Star fox'
+      },
+      {
+        url: 'https://dropsdejogos.uai.com.br/wp-content/uploads/sites/10/2020/07/starfox-950x664.jpg', 
+        description: 'Star fox'
+      }
+    ];
+
 }
