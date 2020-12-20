@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { PhotoService } from './photos/photo/photo.service';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +9,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    photos = [
-      {
-        url: 'https://dropsdejogos.uai.com.br/wp-content/uploads/sites/10/2020/07/starfox-950x664.jpg', 
-        description: 'Star fox'
-      },
-      {
-        url: 'https://dropsdejogos.uai.com.br/wp-content/uploads/sites/10/2020/07/starfox-950x664.jpg', 
-        description: 'Star fox'
-      }
-    ];
+  photos: Object[] = [];
 
+  constructor(private photoService: PhotoService) { }
+
+  ngOnInit(): void {
+
+    this.photoService
+      .listFromUser('flavio')
+      .subscribe(photos => this.photos = photos);
+
+  }
 }
